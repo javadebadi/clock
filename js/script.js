@@ -51,3 +51,7 @@ function findPosNow(){
   let secondPos = findSecondPos(hourMinuteSecond[2]);
   return [hourPos, minutePos, secondPos];
 };
+
+updateClock();
+// update clock every 1000 miliseconds
+var loopClock = setInterval(updateClock, 1000);
