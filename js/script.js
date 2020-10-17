@@ -8,7 +8,7 @@ function findTimeNow(){
   let minute = date.getMinutes();
   let second = date.getSeconds();
   return [hour, minute, second];
-};
+}
 
 function findHourPos(hour, minute, second){
   let tempHour = hour;
@@ -16,15 +16,15 @@ function findHourPos(hour, minute, second){
     tempHour -= 12;
   }
   return tempHour*(360/12.0) + minute*(360/(60*12)) + second*(360/(60*60*12));
-};
+}
 
 function findMinutePos(minute, second){
   return minute*(360/60) + second*(360/(60*60));
-};
+}
 
 function findSecondPos(second){
   return second*(360/60);
-};
+}
 
 function findPosNow(){
   let hourMinuteSecond = findTimeNow();
@@ -32,7 +32,7 @@ function findPosNow(){
   let minutePos = findMinutePos(hourMinuteSecond[1], hourMinuteSecond[2]);
   let secondPos = findSecondPos(hourMinuteSecond[2]);
   return [hourPos, minutePos, secondPos];
-};
+}
 
 function updateClock(){
   let hourMinuteSecondPos = findPosNow();
@@ -46,7 +46,7 @@ function updateClock(){
   SECONDHAND.style.transform = "rotate(" + secondPos + "deg)";
 
   return [hourPos, minutePos, secondPos];
-};
+}
 
 var timePos = updateClock();
 var hourPos = timePos[0];
@@ -68,6 +68,6 @@ function updateClockWithSteps(){
   HOURHAND.style.transform = "rotate(" + hourPos + "deg)";
   MINUTEHAND.style.transform = "rotate(" + minutePos + "deg)";
   SECONDHAND.style.transform = "rotate(" + secondPos + "deg)";
-};
+}
 
-var loopClock = setInterval(updateClockWithSteps, 1000);
+setInterval(updateClockWithSteps, 1000);
