@@ -35,7 +35,7 @@ function findPosNow(){
 };
 
 function updateClock(){
-  hourMinuteSecondPos = findPosNow();
+  let hourMinuteSecondPos = findPosNow();
 
   let hourPos = hourMinuteSecondPos[0];
   let minutePos = hourMinuteSecondPos[1];
