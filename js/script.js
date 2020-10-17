@@ -46,7 +46,7 @@ function updateClock(){
   SECONDHAND.style.transform = "rotate(" + secondPos + "deg)";
 
   return [hourPos, minutePos, secondPos];
-}
+};
 
 var timePos = updateClock();
 var hourPos = timePos[0];
